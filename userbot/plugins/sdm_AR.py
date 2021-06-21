@@ -22,9 +22,7 @@ async def selfdestruct(destroy):
     cat = ("".join(destroy.text.split(maxsplit=1)[1:])).split(" ", 1)
     message = cat[1]
     ttl = int(cat[0])
-    text = (
-        message + f"\n\n`يجب أن تكون هذه الرسالة ذاتية التدمير في {str(ttl)} ثـواني`"
-    )
+    text = message + f"\n\n`يجب أن تكون هذه الرسالة ذاتية التدمير في {str(ttl)} ثـواني`"
     try:
         await destroy.delete()
     except Exception as e:

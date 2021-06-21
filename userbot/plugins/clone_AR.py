@@ -12,11 +12,7 @@ from telethon.tl.types import MessageEntityMentionName
 from . import ALIVE_NAME, AUTONAME, BOTLOG, BOTLOG_CHATID, DEFAULT_BIO
 
 DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
-DEFAULTUSERBIO = (
-    str(DEFAULT_BIO)
-    if DEFAULT_BIO
-    else "@IQTHoN˙"
-)
+DEFAULTUSERBIO = str(DEFAULT_BIO) if DEFAULT_BIO else "@IQTHoN˙"
 
 
 @bot.on(admin_cmd(pattern="clone ?(.*)"))

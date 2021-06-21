@@ -64,9 +64,7 @@ async def get_media(event):
         if msg.media is not None:
             await event.client.download_media(msg, tempdir)
             i += 1
-            await event.edit(
-                f"تحميل الوسائط من هذه القناة.\n **التنـزيلات 𖠕 : **`{i}`"
-            )
+            await event.edit(f"تحميل الوسائط من هذه القناة.\n **التنـزيلات 𖠕 : **`{i}`")
     ps = subprocess.Popen(("ls", tempdir), stdout=subprocess.PIPE)
     output = subprocess.check_output(("wc", "-l"), stdin=ps.stdout)
     ps.wait()

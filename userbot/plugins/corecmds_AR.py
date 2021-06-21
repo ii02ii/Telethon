@@ -32,9 +32,7 @@ async def install(event):
                 )
             else:
                 os.remove(downloaded_file_name)
-                await edit_or_reply(
-                    event, "ان الـملـف مثـبت بـلفعـل 𖠕"
-                )
+                await edit_or_reply(event, "ان الـملـف مثـبت بـلفعـل 𖠕")
         except Exception as e:
             await edit_or_reply(event, str(e))
             os.remove(downloaded_file_name)

@@ -41,7 +41,9 @@ async def _(event):
                 f"**مـعرف الـدردشة الحـالي : **`{str(event.chat_id)}`\n**مـن معـرف المـستخدم : **`{str(r_msg.sender_id)}` 𖠕",
             )
     else:
-        await edit_or_reply(event, f"**مـعرف الـدردشة الحـالي : **`{str(event.chat_id)}` 𖠕")
+        await edit_or_reply(
+            event, f"**مـعرف الـدردشة الحـالي : **`{str(event.chat_id)}` 𖠕"
+        )
 
 
 CMD_HELP.update(

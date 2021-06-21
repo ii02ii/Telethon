@@ -36,7 +36,9 @@ async def tmuter(catty):
         cattime = reason[0]
         reason = reason[1] if hmm == 2 else None
     else:
-        await catevent.edit("اذا لـم تكن لديـك اي معـلومه عن الكـتم مؤقت ارسـل أمـر `.info tadmin` 𖠕")
+        await catevent.edit(
+            "اذا لـم تكن لديـك اي معـلومه عن الكـتم مؤقت ارسـل أمـر `.info tadmin` 𖠕"
+        )
         return
     self_user = await catty.client.get_me()
     ctime = await extract_time(catty, cattime)
@@ -117,7 +119,9 @@ async def ban(catty):
         cattime = reason[0]
         reason = reason[1] if hmm == 2 else None
     else:
-        await catevent.edit("اذا لم تكن لديك معلومة عن الحظر المؤقت أرسل أمر `.info tadmin`")
+        await catevent.edit(
+            "اذا لم تكن لديك معلومة عن الحظر المؤقت أرسل أمر `.info tadmin`"
+        )
         return
     self_user = await catty.client.get_me()
     ctime = await extract_time(catty, cattime)
@@ -151,9 +155,7 @@ async def ban(catty):
         if reply:
             await reply.delete()
     except BadRequestError:
-        await catevent.edit(
-            "لـيس لدي حقـوق كـافية 𖠕"
-        )
+        await catevent.edit("لـيس لدي حقـوق كـافية 𖠕")
         return
     # Delete message and then tell that the command
     # is done gracefully

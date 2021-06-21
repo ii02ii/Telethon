@@ -1,5 +1,3 @@
-
-
 """
 ----------------------------------------------------------------
 All Thenks goes to Emily ( The creater of This Plugin)
@@ -30,9 +28,7 @@ async def potocmd(event):
     if uid.strip() == "":
         uid = 1
         if int(uid) > (len(photos)):
-            return await edit_delete(
-                event, "عـذرا الشـخص لايـضع صور 𖠕"
-            )
+            return await edit_delete(event, "عـذرا الشـخص لايـضع صور 𖠕")
         send_photos = await event.client.download_media(photos[uid - 1])
         await event.client.send_file(event.chat_id, send_photos)
     elif uid.strip() == "all":
@@ -51,9 +47,7 @@ async def potocmd(event):
         try:
             uid = int(uid)
             if uid <= 0:
-                await edit_or_reply(
-                    event, "الـرقم غـير صحـيح 𖠕"
-                )
+                await edit_or_reply(event, "الـرقم غـير صحـيح 𖠕")
                 return
         except BaseException:
             await edit_or_reply(event, "خـطأ 𖠕")

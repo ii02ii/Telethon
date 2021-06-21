@@ -337,9 +337,7 @@ async def kakashi(event):
     chat = "@instasavegrambot"
     link = event.pattern_match.group(1)
     if "www.instagram.com" not in link:
-        await edit_or_reply(
-            event, "ضع الامر بجانبه رابط الفديو او الصوره من الانستا"
-        )
+        await edit_or_reply(event, "ضع الامر بجانبه رابط الفديو او الصوره من الانستا")
     else:
         start = datetime.now()
         catevent = await edit_or_reply(event, "جاري التحميل أنتضر")
@@ -352,7 +350,9 @@ async def kakashi(event):
             details = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await catevent.edit("**خطا:** `افتح الحضر من البوت` @instasavegrambot `قم محاوله مره اخرى!`")
+            await catevent.edit(
+                "**خطا:** `افتح الحضر من البوت` @instasavegrambot `قم محاوله مره اخرى!`"
+            )
             return
         await catevent.delete()
         cat = await event.client.send_file(

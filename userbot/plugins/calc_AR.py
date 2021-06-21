@@ -32,9 +32,7 @@ async def _(car):
         evaluation = stdout
     else:
         evaluation = "آسف ، لا يمكنني العثور على نتيجة للمعادلة المحددة 𖠕"
-    final_output = "**معادلة**: `{}` \n\n **الحـل**: \n`{}` \n".format(
-        cmd, evaluation
-    )
+    final_output = "**معادلة**: `{}` \n\n **الحـل**: \n`{}` \n".format(cmd, evaluation)
     await event.edit(final_output)
 
 

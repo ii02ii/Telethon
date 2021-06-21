@@ -38,9 +38,7 @@ async def on_add_black_list(event):
         sql.add_to_blacklist(event.chat_id, trigger.lower())
     await edit_or_reply(
         event,
-        "مـضاف {} الـى القائمه السـوداء تـم حظـر الكـلمة 𖠕".format(
-            len(to_blacklist)
-        ),
+        "مـضاف {} الـى القائمه السـوداء تـم حظـر الكـلمة 𖠕".format(len(to_blacklist)),
     )
 
 
@@ -59,7 +57,8 @@ async def on_delete_blacklist(event):
     )
 
     await edit_or_reply(
-        event, f"تـم حـذف الكـلمة {successful} / {len(to_unblacklist)} : مـن القائـمة السـوداء 𖠕"
+        event,
+        f"تـم حـذف الكـلمة {successful} / {len(to_unblacklist)} : مـن القائـمة السـوداء 𖠕",
     )
 
 

@@ -169,7 +169,9 @@ async def get_users(show):
             chat = await show.client.get_entity(input_str)
         except Exception as e:
             await edit_delete(show, f"`{str(e)}`", 10)
-    catevent = await edit_or_reply(show, "`جـاري جلب اليـوزرات المجمـوعة في مـلف 𖠕...`  ")
+    catevent = await edit_or_reply(
+        show, "`جـاري جلب اليـوزرات المجمـوعة في مـلف 𖠕...`  "
+    )
     try:
         if not show.pattern_match.group(1):
             async for user in show.client.iter_participants(show.chat_id):
@@ -245,9 +247,7 @@ async def get_chatinfo(event, catevent):
             await catevent.edit("`قناة / مجموعة غير صالحة 𖠕`")
             return None
         except ChannelPrivateError:
-            await catevent.edit(
-                "`هذه قناة / مجموعة خاصة أو ممنوع من هناك`"
-            )
+            await catevent.edit("`هذه قناة / مجموعة خاصة أو ممنوع من هناك`")
             return None
         except ChannelPublicGroupNaError:
             await catevent.edit("`القناة أو المجموعة الفائقة غير موجودة 𖠕`")

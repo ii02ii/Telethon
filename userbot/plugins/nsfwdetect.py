@@ -11,13 +11,13 @@ import requests
 async def detect(event):
     if Config.DEEP_AI is None:
         return await edit_delete(
-            event, "أضـف VAR `DEEP_AI` اجـلب المـفتاح من هـنا from https://deepai.org/", 5
+            event,
+            "أضـف VAR `DEEP_AI` اجـلب المـفتاح من هـنا from https://deepai.org/",
+            5,
         )
     reply = await event.get_reply_message()
     if not reply:
-        return await edit_delete(
-            event, "`قـم برد على المـلصق !`", 5
-        )
+        return await edit_delete(event, "`قـم برد على المـلصق !`", 5)
     catevent = await edit_or_reply(event, "`Downloading the file to check...`")
     media = await event.client.download_media(reply)
     if not media.endswith(("png", "jpg", "webp")):

@@ -1,9 +1,6 @@
 import time
-from platform import python_version
 
-from telethon import version
-
-from . import ALIVE_NAME, StartTime, catversion, get_readable_time, mention, reply_id
+from . import ALIVE_NAME, StartTime, get_readable_time, mention, reply_id
 
 DEFAULTUSER = ALIVE_NAME or "I𝐐𝐓𝐇𝐎𝐍⁦♡⁩"
 CAT_IMG = Config.ALIVE_PIC or "https://telegra.ph/file/8113946b13686a0bdcac6.jpg"
@@ -32,13 +29,13 @@ async def amireallyalive(alive):
     else:
         await edit_or_reply(
             alive,
-             f"**{CUSTOM_ALIVE_TEXT}**\n"
-        f"**{EMOJI} قاعدة البيانات 『** `1.0.0`』\n"
-        f"**{EMOJI} اصدار التليثون  『** `1.0.0`』\n`"
-        f"**{EMOJI} اصدار تليثون العرب 『** `1.0.0`』\n"
-        f"**{EMOJI} اصدار البايثون 『** `1.0.0`』\n`"
-        f"**{EMOJI} مدة التشغيل 『** `{uptime}』\n`"
-        f"**{EMOJI} المستخدم 『** {mention}』\n",
+            f"**{CUSTOM_ALIVE_TEXT}**\n"
+            f"**{EMOJI} قاعدة البيانات 『** `1.0.0`』\n"
+            f"**{EMOJI} اصدار التليثون  『** `1.0.0`』\n`"
+            f"**{EMOJI} اصدار تليثون العرب 『** `1.0.0`』\n"
+            f"**{EMOJI} اصدار البايثون 『** `1.0.0`』\n`"
+            f"**{EMOJI} مدة التشغيل 『** `{uptime}』\n`"
+            f"**{EMOJI} المستخدم 『** {mention}』\n",
         )
 
 

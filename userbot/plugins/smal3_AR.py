@@ -43,7 +43,6 @@ async def _(event):
         deq.rotate(1)
 
 
-
 @bot.on(admin_cmd(pattern=r"dump ?(.*)", outgoing=True))
 @bot.on(sudo_cmd(pattern=r"dump ?(.*)", allow_sudo=True))
 async def _(message):

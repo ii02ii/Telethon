@@ -6,7 +6,6 @@ import io
 import traceback
 from datetime import datetime
 
-import requests
 from selenium import webdriver
 from validators.url import url
 
@@ -76,7 +75,6 @@ async def _(event):
             )
     except Exception:
         await catevent.edit(f"`{traceback.format_exc()}`")
-
 
 
 CMD_HELP.update(

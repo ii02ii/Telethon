@@ -1,13 +1,9 @@
 import asyncio
 import io
 import os
-from asyncio import create_subprocess_exec as asyncrunapp
-from asyncio.subprocess import PIPE as asyncPIPE
 
 if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
     os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
-
-
 
 
 @bot.on(admin_cmd(pattern="date$"))
@@ -58,9 +54,7 @@ async def _(event):
     )
     stdout, stderr = await process.communicate()
     o = stdout.decode()
-    OUTPUT = (
-        f"**[Telethon-AR](tg://need_update_for_some_feature/) Environment Module:**\n\n\n{o}"
-    )
+    OUTPUT = f"**[Telethon-AR](tg://need_update_for_some_feature/) Environment Module:**\n\n\n{o}"
     if len(OUTPUT) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(OUTPUT)) as out_file:
             out_file.name = "env.text"
@@ -75,7 +69,6 @@ async def _(event):
             await event.delete()
     else:
         event = await edit_or_reply(event, OUTPUT)
-
 
 
 CMD_HELP.update(

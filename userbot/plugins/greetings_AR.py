@@ -45,8 +45,6 @@ async def gn(event):
 # @PhycoNinja13b 's Part begin from here
 
 
-
-
 @bot.on(admin_cmd(pattern=r"cheer$"))
 @bot.on(sudo_cmd(pattern="cheer$", allow_sudo=True))
 async def cheer(event):

@@ -24,11 +24,9 @@ async def waifu(animu):
         if animu.is_reply:
             text = (await animu.get_reply_message()).message
         else:
-            await edit_or_reply(
-                animu, "`أنت لم تكتب أي مقال ، وايفو سوف يغادر.`"
-            )
+            await edit_or_reply(animu, "`أنت لم تكتب أي مقال ، وايفو سوف يغادر.`")
             return
-    text = deEmojify(text);
+    text = deEmojify(text)
     await animu.delete()
     await waifutxt(text, animu.chat_id, reply_to_id, bot, animu.client)
 

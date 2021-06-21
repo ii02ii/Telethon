@@ -38,7 +38,8 @@ async def fastpurger(event):
                     msgs = []
         elif input_str:
             return await edit_or_reply(
-                event, f"**هنـاك خطـأ**\n`{input_str} ليس عددًا صحيحًا.  استخدم بناء الجملة الصحيح.`"
+                event,
+                f"**هنـاك خطـأ**\n`{input_str} ليس عددًا صحيحًا.  استخدم بناء الجملة الصحيح.`",
             )
         else:
             async for msg in event.client.iter_messages(
@@ -61,12 +62,16 @@ async def fastpurger(event):
     await event.delete()
     hi = await event.client.send_message(
         event.chat_id,
-        "اكـتمل حـذف رسائل بنجـاح 𖠕 \nمـعلومات الحـذف 𖠕 " + str(count) + " messages.` 𖠕",
+        "اكـتمل حـذف رسائل بنجـاح 𖠕 \nمـعلومات الحـذف 𖠕 "
+        + str(count)
+        + " messages.` 𖠕",
     )
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            "حـذف الـرسائـل \n`معـلومات الحـذف " + str(count) + " تـم الانتـهاء بنـجاح 𖠕.`",
+            "حـذف الـرسائـل \n`معـلومات الحـذف "
+            + str(count)
+            + " تـم الانتـهاء بنـجاح 𖠕.`",
         )
     await sleep(5)
     await hi.delete()
@@ -127,7 +132,9 @@ async def purge_to(event):
             await event.client.delete_messages(chat, msgs)
         await edit_delete(
             event,
-            "`تـم اكتـمال الحـذف الاستثنائـي 𖠕!\nالمـحذوفات 𖠕 " + str(count) + " messages.` 𖠕",
+            "`تـم اكتـمال الحـذف الاستثنائـي 𖠕!\nالمـحذوفات 𖠕 "
+            + str(count)
+            + " messages.` 𖠕",
         )
         if BOTLOG:
             await event.client.send_message(

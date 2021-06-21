@@ -1,7 +1,5 @@
 import asyncio
-import random
 
-from . import catmemes
 
 @bot.on(admin_cmd(outgoing=True, pattern="kiss$"))
 @bot.on(sudo_cmd(pattern="kiss$", allow_sudo=True))

@@ -1,11 +1,9 @@
-
 import os
 import re
 
 from telethon import Button
 
 from . import BOT_USERNAME
-
 
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 

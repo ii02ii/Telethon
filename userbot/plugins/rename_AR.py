@@ -3,7 +3,7 @@ import os
 import time
 from datetime import datetime
 
-from . import progress, reply_id
+from . import progress
 
 thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "thumb_image.jpg"
 

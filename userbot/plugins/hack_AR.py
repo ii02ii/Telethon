@@ -19,9 +19,7 @@ async def _(event):
         await event.client(GetFullUserRequest(reply_message.sender_id))
         idd = reply_message.sender_id
         if idd == 1226408155:
-            await edit_or_reply(
-                event, "عـذرا انـة مطـوري لايمكننـي تهكـيرة 🙂"
-            )
+            await edit_or_reply(event, "عـذرا انـة مطـوري لايمكننـي تهكـيرة 🙂")
         else:
             event = await edit_or_reply(event, "جـاري التـهكير..")
             animation_chars = [

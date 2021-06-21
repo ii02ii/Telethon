@@ -201,9 +201,7 @@ async def uploadir(event):
         await upload(path, event, udir_event, catflag=True)
         end = datetime.now()
         ms = (end - start).seconds
-        await udir_event.edit(
-            f"`مـلف مـحمـل {str(path)} بنـجاح فـي {ms} ثـواني 𖠕. `"
-        )
+        await udir_event.edit(f"`مـلف مـحمـل {str(path)} بنـجاح فـي {ms} ثـواني 𖠕. `")
     await asyncio.sleep(5)
     await udir_event.delete()
 

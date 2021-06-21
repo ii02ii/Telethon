@@ -107,7 +107,9 @@ async def catbroadcast_send(event):
         except Exception as e:
             LOGS.info(str(e))
         await sleep(0.5)
-    resultext = f"`تم إرسال الرسالة إلى {i} الدردشات في الفئة {no_of_chats} هـذة {keyword}.`"
+    resultext = (
+        f"`تم إرسال الرسالة إلى {i} الدردشات في الفئة {no_of_chats} هـذة {keyword}.`"
+    )
     await catevent.edit(resultext)
     if BOTLOG:
         await event.client.send_message(
@@ -330,9 +332,7 @@ async def catbroadcast_delete(event):
     try:
         sql.del_keyword_broadcastlist(catinput_str)
         await edit_or_reply(
-            event,
-            f"تم حذف الفئة بنجاح {catinput_str}",
-            parse_mode=parse_pre
+            event, f"تم حذف الفئة بنجاح {catinput_str}", parse_mode=parse_pre
         )
     except Exception as e:
         await edit_delete(

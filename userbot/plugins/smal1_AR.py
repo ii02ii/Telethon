@@ -63,9 +63,6 @@ async def _(event):
     await asyncio.sleep(2)
 
 
-
-
-
 @bot.on(admin_cmd(pattern=f"kill$", outgoing=True))
 @bot.on(sudo_cmd(pattern=f"kill$", allow_sudo=True))
 async def _(event):

@@ -216,9 +216,7 @@ async def ban(bon):
         if reply:
             await reply.delete()
     except BadRequestError:
-        await catevent.edit(
-            "**𖠕 عـذرا ليـست لدي صـلاحيات كـافية**"
-        )
+        await catevent.edit("**𖠕 عـذرا ليـست لدي صـلاحيات كـافية**")
         return
     if reason:
         await catevent.edit(
@@ -295,9 +293,7 @@ async def startmute(event):
         replied_user = await event.client(GetFullUserRequest(userid))
         chat_id = event.chat_id
         if is_muted(userid, chat_id):
-            return await event.edit(
-                "**𖠕 هذا المستخدم مكتوم بالفعل في هذه الدردشة**"
-            )
+            return await event.edit("**𖠕 هذا المستخدم مكتوم بالفعل في هذه الدردشة**")
         try:
             mute(userid, chat_id)
         except Exception as e:
@@ -318,16 +314,12 @@ async def startmute(event):
         if user.id == bot.uid:
             return await edit_or_reply(event, "**𖠕 اعتـذر لايمكنني كتـم نفـسي**")
         if is_muted(user.id, event.chat_id):
-            return await edit_or_reply(
-                event, ""
-            )
+            return await edit_or_reply(event, "")
         try:
             admin = chat.admin_rights
             creator = chat.creator
             if not admin and not creator:
-                await edit_or_reply(
-                    event, "**𖠕 عـذرا ليـست لدي صـلاحيات كـافية**"
-                )
+                await edit_or_reply(event, "**𖠕 عـذرا ليـست لدي صـلاحيات كـافية**")
                 return
             result = await event.client(
                 functions.channels.GetParticipantRequest(
@@ -351,9 +343,7 @@ async def startmute(event):
                         "𖠕 عـذرا ليـست لدي صـلاحيات كـافية",
                     )
             elif "creator" not in vars(chat):
-                return await edit_or_reply(
-                    event, "𖠕 عـذرا ليـست لدي صـلاحيات كـافية"
-                )
+                return await edit_or_reply(event, "𖠕 عـذرا ليـست لدي صـلاحيات كـافية")
             try:
                 mute(user.id, event.chat_id)
             except Exception as e:
@@ -392,17 +382,13 @@ async def endmute(event):
         replied_user = await event.client(GetFullUserRequest(userid))
         chat_id = event.chat_id
         if not is_muted(userid, chat_id):
-            return await event.edit(
-                "**𖠕 لـم يتـم كتـم هذا المسـتخدم في المجـموعـة**"
-            )
+            return await event.edit("**𖠕 لـم يتـم كتـم هذا المسـتخدم في المجـموعـة**")
         try:
             unmute(userid, chat_id)
         except Exception as e:
             await event.edit(f"**Error **\n`{str(e)}`")
         else:
-            await event.edit(
-                "**𖠕 لقـد تم مسـح الكتـم من المسـتخدم**"
-            )
+            await event.edit("**𖠕 لقـد تم مسـح الكتـم من المسـتخدم**")
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -478,7 +464,9 @@ async def kick(usr):
             f"`تـم الطرد ` [{user.first_name}](tg://user?id={user.id})`!`\nReason: {reason}"
         )
     else:
-        await catevent.edit(f"`تـم الطرد` [{user.first_name}](tg://user?id={user.id})`!`")
+        await catevent.edit(
+            f"`تـم الطرد` [{user.first_name}](tg://user?id={user.id})`!`"
+        )
     if BOTLOG:
         await usr.client.send_message(
             BOTLOG_CHATID,
@@ -552,9 +540,7 @@ async def pin(msg):
         except Exception as e:
             return await edit_delete(msg, f"`{str(e)}`", 5)
     else:
-        return await edit_delete(
-            msg, "**الرد على رسالة لإلغاء تثبيتها**", 5
-        )
+        return await edit_delete(msg, "**الرد على رسالة لإلغاء تثبيتها**", 5)
     await edit_delete(msg, "**𖠕 تـم فـك الـحظر بنـجاح**", 3)
     user = await get_user_from_id(msg.sender_id, msg)
     if BOTLOG and not msg.is_private:
@@ -587,9 +573,7 @@ async def _(event):
             deleted_msg += "\n👉`{}`".format(i.old.message)
         await edit_or_reply(event, deleted_msg)
     else:
-        await edit_or_reply(
-            event, "**𖠕 عـذرا ليـست لدي صـلاحيات كـافية**"
-        )
+        await edit_or_reply(event, "**𖠕 عـذرا ليـست لدي صـلاحيات كـافية**")
         await sleep(3)
         try:
             await event.delete()

@@ -1,5 +1,3 @@
-
-
 import asyncio
 import base64
 import os
@@ -59,7 +57,6 @@ async def autopic(event):
         addgvar("autopic_counter", input_str)
     await edit_delete(event, f"`بـدأ التـغيـر الصور التـلقائي 𖠕`")
     await autopicloop()
-
 
 
 @bot.on(admin_cmd(pattern="autoname$"))
@@ -265,7 +262,7 @@ async def bloom_pfploop():
 async def autoname_loop():
     AUTONAMESTART = gvarstatus("autoname") == "true"
     while AUTONAMESTART:
-        DM = time.strftime("%d-%m-%y")
+        time.strftime("%d-%m-%y")
         HM = time.strftime("%H:%M")
         name = f"𖠕 {HM} - "
         LOGS.info(name)
@@ -281,7 +278,7 @@ async def autoname_loop():
 async def autobio_loop():
     AUTOBIOSTART = gvarstatus("autobio") == "true"
     while AUTOBIOSTART:
-        DMY = time.strftime("%d.%m.%Y")
+        time.strftime("%d.%m.%Y")
         HM = time.strftime("%H:%M:%S")
         bio = f" - {DEFAULTUSERBIO} - 𖠕 {HM}"
         LOGS.info(bio)

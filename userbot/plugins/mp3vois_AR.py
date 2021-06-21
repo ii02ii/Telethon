@@ -5,12 +5,9 @@ import base64
 import os
 import time
 from datetime import datetime
-from io import BytesIO
 
 from telethon import functions, types
-from telethon.errors import PhotoInvalidDimensionsError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
-from telethon.tl.functions.messages import SendMediaRequest
 
 from . import make_gif, progress
 
@@ -50,7 +47,9 @@ async def _(cat):
         else:
             await event.edit("لايـمكننـي تـحويل")
     else:
-        await event.edit("لتـحويل الملـصق الى صورة قم بـرد على الملصـق بالأمر. `.stoi` 𖠕")
+        await event.edit(
+            "لتـحويل الملـصق الى صورة قم بـرد على الملصـق بالأمر. `.stoi` 𖠕"
+        )
 
 
 @bot.on(admin_cmd(pattern="itos$"))
@@ -111,7 +110,6 @@ async def get(event):
         os.remove(name)
     else:
         await edit_or_reply(event, "reply to text message as `.ttf <file name>`")
-
 
 
 @bot.on(admin_cmd(pattern="gif(?: |$)(.*)"))

@@ -26,9 +26,7 @@ async def _(event):
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
-            "تـم صنع تليجراف الخـاص بك {} للـرابط الحـالي.".format(
-                auth_url
-            ),
+            "تـم صنع تليجراف الخـاص بك {} للـرابط الحـالي.".format(auth_url),
         )
     optional_title = event.pattern_match.group(2)
     if event.reply_to_msg_id:

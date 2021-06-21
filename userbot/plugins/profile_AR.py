@@ -1,11 +1,7 @@
-import os
-
 from telethon.errors.rpcerrorlist import UsernameOccupiedError
-from telethon.tl import functions
 from telethon.tl.functions.account import UpdateUsernameRequest
 from telethon.tl.functions.channels import GetAdminedPublicChannelsRequest
-from telethon.tl.functions.photos import DeletePhotosRequest, GetUserPhotosRequest
-from telethon.tl.types import Channel, Chat, InputPhoto, User
+from telethon.tl.types import Channel, Chat, User
 
 # ====================== CONSTANT ===============================
 INVALID_MEDIA = "```امتداد الكيان الإعلامي غير صالح.```"
@@ -16,7 +12,7 @@ USERNAME_TAKEN = "```أسم المستخدم مأخوذ مسبقا 𖠕.```"
 
 @bot.on(admin_cmd(outgoing=True, pattern="username (.*)"))
 async def update_username(username):
-    """ For .username command, set a new username in Telegram. """
+    """For .username command, set a new username in Telegram."""
     newusername = username.pattern_match.group(1)
     try:
         await username.client(UpdateUsernameRequest(newusername))
@@ -27,7 +23,7 @@ async def update_username(username):
 
 @bot.on(admin_cmd(outgoing=True, pattern="count$"))
 async def count(event):
-    """ For .count command, get profile stats. """
+    """For .count command, get profile stats."""
     u = 0
     g = 0
     c = 0
@@ -60,7 +56,6 @@ async def count(event):
     result += f"`الـبوتات 𖠕:`\t**{b}**"
 
     await event.edit(result)
-
 
 
 @bot.on(admin_cmd(pattern="myusernames$"))

@@ -3,7 +3,7 @@ from asyncio import sleep
 from googletrans import LANGUAGES, Translator
 
 from . import BOTLOG, BOTLOG_CHATID, deEmojify
-from .sql_helper.globals import addgvar, gvarstatus
+from .sql_helper.globals import addgvar
 
 
 @bot.on(admin_cmd(pattern="tl (.*)"))
@@ -34,7 +34,6 @@ async def _(event):
         await edit_or_reply(event, output_str)
     except Exception as exc:
         await edit_delete(event, str(exc), time=5)
-
 
 
 @bot.on(admin_cmd(pattern="lang trt (.*)", outgoing=True))

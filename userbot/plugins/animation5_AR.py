@@ -90,7 +90,7 @@ async def _(event):
         "😧",
         "😡",
         "😢",
-        ]
+    ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 10])
@@ -122,7 +122,6 @@ async def _(event):
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 6])
-
 
 
 @bot.on(admin_cmd(pattern=f"hand$", outgoing=True))

@@ -2,9 +2,7 @@ from asyncio import sleep
 
 from telethon.errors import ChatAdminRequiredError, UserAdminInvalidError
 from telethon.tl import functions
-from telethon.tl.functions.channels import EditBannedRequest
 from telethon.tl.types import (
-    ChannelParticipantsAdmins,
     ChannelParticipantsKicked,
     ChatBannedRights,
     UserStatusEmpty,
@@ -34,7 +32,6 @@ BANNED_RIGHTS = ChatBannedRights(
 async def kickme(leave):
     await leave.edit("جـاري الخـروج من المجـموعة 𖠕")
     await leave.client.kick_participant(leave.chat_id, "me")
-
 
 
 @bot.on(admin_cmd(pattern="unbanall ?(.*)"))
@@ -215,9 +212,7 @@ async def rm_deletedacc(show):
     del_u = 0
     del_status = "`لـم يتـم العـثور علـى حسـابات محـذوفـة 𖠕`"
     if con != "clean":
-        event = await edit_or_reply(
-            show, "جـاري البـحث عـن الحسـابات المـحذوفه 𖠕...`"
-        )
+        event = await edit_or_reply(show, "جـاري البـحث عـن الحسـابات المـحذوفه 𖠕...`")
         async for user in show.client.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
