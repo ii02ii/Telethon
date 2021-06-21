@@ -1,4 +1,4 @@
-FROM klanrali/telethon-Arabs:latest
+FROM ii02ii/Telethon:latest
 
 #clonning repo 
 RUN git clone https://github.com/ii02ii/Telethon.git /root/userbot
